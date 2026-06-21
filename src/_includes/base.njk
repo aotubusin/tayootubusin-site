@@ -12,46 +12,35 @@
 <body>
 
 <header>
-  <div class="wrap nav-inner">
+  <div class="wrap nav">
     <a href="/" class="brand">
-      {% if profile.logo %}
-        <img src="{{ profile.logo }}" alt="{{ profile.name }}" class="brand-logo">
-      {% else %}
-        <span class="dot"></span>{{ profile.name | upper }}
-      {% endif %}
+      {% if profile.logo %}<img src="{{ profile.logo }}" alt="{{ profile.name }}" style="height:30px;width:auto;">{% else %}<span class="dot"></span>{{ profile.name | upper }}{% endif %}
     </a>
-    <nav class="nav-links">
+    <nav class="links">
       <a href="/#about">About</a>
       <a href="/#impact">Profile</a>
       <a href="/#expertise">Expertise</a>
       <a href="/blog/">Writing</a>
       {% if profile.medium %}<a href="{{ profile.medium }}">Medium</a>{% endif %}
-      <a href="/#contact" class="nav-cta">Get in touch</a>
     </nav>
+    <button class="nav-cta" onclick="location.href='/#contact'">Get in touch →</button>
+    <button class="menu-toggle" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 {{ content | safe }}
 
-<footer class="site-footer">
+<footer>
   <div class="wrap">
-    {% if profile.logo_dark %}<img src="{{ profile.logo_dark }}" alt="{{ profile.name }}" class="foot-logo">{% endif %}
+    {% if profile.logo_dark %}<img src="{{ profile.logo_dark }}" alt="{{ profile.name }}" class="foot-logo" style="height:40px;margin-bottom:20px;">{% else %}<div class="foot-word">{{ profile.name | upper | replace("TAYO ", "") }}</div>{% endif %}
     <div class="foot-grid">
-      <div class="foot-col">
-        <div class="foot-name">{{ profile.name }}</div>
-        <p class="foot-tag">{{ profile.tagline }}</p>
-      </div>
-      <div class="foot-col"><h4>Explore</h4>
-        <a href="/#about">About</a><a href="/#impact">Profile</a><a href="/#expertise">Expertise</a><a href="/blog/">Writing</a>
-      </div>
-      <div class="foot-col"><h4>Connect</h4>
-        <a href="{{ profile.linkedin }}">LinkedIn</a>
-        <a href="https://www.researchgate.net/profile/Adetayo-Otubusin">Research profile</a>
-        {% if profile.medium %}<a href="{{ profile.medium }}">Medium</a>{% endif %}
-        <a href="mailto:{{ profile.email }}">Email</a>
-      </div>
+      <div class="foot-col"><h4>Explore</h4><a href="/#about">About</a><a href="/#impact">Profile</a><a href="/#expertise">Expertise</a><a href="/blog/">Writing</a><a href="/#beyond">Beyond work</a></div>
+      <div class="foot-col"><h4>Connect</h4><a href="{{ profile.linkedin }}">LinkedIn</a><a href="https://www.researchgate.net/profile/Adetayo-Otubusin">Research profile</a>{% if profile.medium %}<a href="{{ profile.medium }}">Medium</a>{% endif %}<a href="mailto:{{ profile.email }}">Email</a><a href="https://tayorskifellowship.org">The Fellowship</a></div>
     </div>
-    <div class="foot-base">© 2026 {{ profile.name }} · Also known as Prince Tayorski</div>
+    <div class="foot-bottom">
+      <div>© 2026 {{ profile.name }} · MBA, MEng (Hons)</div>
+      <div>Operations &amp; Transformation Leader · Derby, UK</div>
+    </div>
   </div>
 </footer>
 
