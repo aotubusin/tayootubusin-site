@@ -237,7 +237,8 @@
   @media (max-width: 560px) { .wrap { padding: 0 22px; } .impact-grid { grid-template-columns: 1fr; } .istat { border-left: none; padding-left: 0; border-top: 1px solid rgba(237,240,244,0.18); padding-top: 26px; } .istat:first-child { border-top: none; padding-top: 0; } }
 
   /* BLOG listing + post pages */
-  .blog-list { margin-top: 48px; border-top: 1px solid var(--line); }
+  .blog-intro { max-width: none; }
+  .blog-list { margin-top: 64px; border-top: 1px solid var(--line); }
   .blog-item { display: block; padding: 32px 0; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding-left .25s ease; }
   .blog-item:hover { padding-left: 12px; }
   .blog-meta { font-family: var(--disp); font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--terra); }
