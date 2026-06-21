@@ -4,32 +4,31 @@ title: Writing
 permalink: /blog/index.html
 ---
 
-<section class="blog-list">
-  <h1>Writing &amp; thinking</h1>
+<section class="block">
+  <div class="wrap">
+    <div class="kicker">Writing &amp; thinking</div>
+    <h2 class="big">Ideas worth <span class="serif">sharing.</span></h2>
+    <p class="lead-p">Occasional essays on transformation, leadership, engineering, and giving back.</p>
 
-  <h2>From this site</h2>
-  {% for post in collections.posts %}
-    <article class="post-card">
-      <p class="post-meta">{{ post.date | readableDate }}{% if post.data.category %} · {{ post.data.category }}{% endif %}</p>
-      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-      <p>{{ post.data.excerpt }}</p>
-      {% if post.data.tags %}
-        <p class="tags">{% for t in post.data.tags %}<span>#{{ t }}</span> {% endfor %}</p>
-      {% endif %}
-    </article>
-  {% else %}
-    <p>No posts yet. Add your first one from the <a href="/admin/">content manager</a>.</p>
-  {% endfor %}
+    <div class="blog-list">
+      {% for post in collections.posts %}
+      <a class="blog-item" href="{{ post.url }}">
+        <div class="blog-meta">{{ post.date | readableDate }}{% if post.data.category %} · {{ post.data.category }}{% endif %}</div>
+        <h3>{{ post.data.title }}</h3>
+        <p>{{ post.data.excerpt }}</p>
+        {% if post.data.tags %}<div class="blog-tags">{% for t in post.data.tags %}<span>#{{ t }}</span>{% endfor %}</div>{% endif %}
+      </a>
+      {% else %}
+      <p class="lead-p">No posts yet. Add your first from the content manager.</p>
+      {% endfor %}
 
-  {% if medium and medium.length %}
-    <h2>From Medium</h2>
-    {% set mediumPosts = medium | limit(5) %}
-    {% for m in mediumPosts %}
-      <article class="post-card">
-        <p class="post-meta">{{ m.date | readableDate }} · Medium</p>
-        <h3><a href="{{ m.link }}">{{ m.title }}</a></h3>
+      {% if medium %}{% set mediumPosts = medium | limit(6) %}{% for m in mediumPosts %}
+      <a class="blog-item" href="{{ m.link }}">
+        <div class="blog-meta">{{ m.date | readableDate }} · Medium</div>
+        <h3>{{ m.title }}</h3>
         <p>{{ m.excerpt }}…</p>
-      </article>
-    {% endfor %}
-  {% endif %}
+      </a>
+      {% endfor %}{% endif %}
+    </div>
+  </div>
 </section>
