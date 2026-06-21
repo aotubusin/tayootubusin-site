@@ -6,7 +6,7 @@
 
 // 1. Set your Medium handle here once you have a Medium profile.
 //    Leave as "" to skip Medium entirely until you're ready.
-const MEDIUM_HANDLE = ""; // e.g. "@tayotubusin"  (keep the @)
+const MEDIUM_HANDLE = "@aotubusin"; // e.g. "@tayotubusin"  (keep the @)
 
 module.exports = async function () {
   if (!MEDIUM_HANDLE) return [];
