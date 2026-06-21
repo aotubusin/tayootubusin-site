@@ -6,7 +6,7 @@
 
 backend:
   name: github                       # content lives in your GitHub repo
-  repo: YOUR-GITHUB-USERNAME/tayootubusin-site   # <-- change this
+  repo: aotubusin/tayootubusin-site   # <-- change this
   branch: main
   # Auth is wired during deployment (see README, step 5).
 
