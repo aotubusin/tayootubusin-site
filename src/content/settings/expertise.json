@@ -1,0 +1,8 @@
+{
+  "pillars": [
+    { "tag": "Design", "title": "Operating Model Design", "body": "Shaping how work is structured, delivered and measured, aligning process, performance and capability so an organisation can deliver reliably and scale." },
+    { "tag": "Deliver", "title": "Programme & Transformation Delivery", "body": "Translating strategic intent into measurable operational outcomes, leading complex, cross-functional change from definition through to delivery and sustained adoption." },
+    { "tag": "Measure", "title": "Data-led Performance & Governance", "body": "Establishing governance frameworks, KPIs and reporting cadence that improve visibility, accountability and decision-making, turning data into better performance." },
+    { "tag": "Align", "title": "Cross-functional Stakeholder Alignment", "body": "Bringing engineering, quality and operations together to deliver coordinated outcomes, with the influence to move teams who do not report to me." }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "chapters": [
+    { "period": "Foundation · Liverpool", "title": "An engineer's grounding", "body": "MEng (Hons) in Aerospace Engineering at the University of Liverpool, the technical bedrock beneath everything that followed." },
+    { "period": "2014–2015 · Sheffield", "title": "Precision engineering", "body": "Design Engineer at IIDEA Limited, with hands-on component design, manufacture and inspection across CAD, CNC and multi-axis machining, working to ISO 9001 and UKAS quality standards." },
+    { "period": "2015–2018 · Advanced Manufacturing", "title": "Engineering at the frontier", "body": "Advanced Manufacturing Engineer at Florida Turbine Technologies, leading the end-to-end delivery of a £250k+ Innovate UK co-funded programme, followed by applied additive-manufacturing research and a peer-reviewed paper at ASME Turbo Expo 2018." },
+    { "period": "2018–Present · AddQual, Derby", "title": "Operations & Transformation Lead", "body": "Progressing from technical delivery into leadership of metrology operations and broader transformation. Accountable for delivery, quality and operational efficiency across engineering, quality and operations." },
+    { "period": "Recent · Warwick & beyond", "title": "Sharpening the strategy, giving back", "body": "An Executive MBA at Warwick Business School, alongside serving as a school governor in Derby and founding the Tayorski Fellowship." }
+  ]
+}

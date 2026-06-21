@@ -1,0 +1,72 @@
+---
+layout: base.njk
+title: Tayo Otubusin
+permalink: /index.html
+---
+
+{#
+  NOTE: This is a simplified homepage that proves the CMS wiring works
+  (every value below is editable from /admin/). The full visual design
+  from tayootubusin-personal-FINAL.html should be migrated into this
+  template by a developer, keeping the profile / atglance placeholders
+  so it stays editable.
+#}
+
+<section class="hero">
+  {% if profile.portrait %}<img class="portrait" src="{{ profile.portrait }}" alt="{{ profile.name }}" />{% endif %}
+  <p class="roles">{{ profile.roles }}</p>
+  <h1>{{ profile.name }}</h1>
+  <p class="tagline">{{ profile.tagline }}</p>
+  <p class="lead">{{ profile.lead }}</p>
+</section>
+
+<section class="at-a-glance">
+  <h2>At a glance</h2>
+  <div class="stats">
+    {% for s in atglance.stats %}
+      <div class="stat">
+        <div class="num">{{ s.prefix }}{{ s.value }}{{ s.suffix }}</div>
+        <div class="label">{{ s.label }}</div>
+      </div>
+    {% endfor %}
+  </div>
+  <p class="sectors"><strong>{{ sectors.heading }}:</strong>
+    {{ sectors.items | join(' · ') }}
+  </p>
+</section>
+
+<section class="story">
+  <h2>My story</h2>
+  {% for c in timeline.chapters %}
+    <div class="chapter">
+      <p class="period">{{ c.period }}</p>
+      <h3>{{ c.title }}</h3>
+      <p>{{ c.body }}</p>
+    </div>
+  {% endfor %}
+</section>
+
+<section class="expertise">
+  <h2>Where I create value</h2>
+  {% for p in expertise.pillars %}
+    <div class="pillar">
+      <span class="tag">{{ p.tag }}</span>
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.body }}</p>
+    </div>
+  {% endfor %}
+</section>
+
+<section class="latest">
+  <h2>Latest writing</h2>
+  {% set recent = collections.posts | limit(3) %}
+  {% for post in recent %}
+    <p><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; {{ post.date | readableDate }}</p>
+  {% endfor %}
+  <p><a href="/blog/">All writing →</a></p>
+</section>
+
+<section class="contact">
+  <h2>Let's build something</h2>
+  <p><a href="mailto:{{ profile.email }}">Email me</a> · <a href="{{ profile.linkedin }}">LinkedIn</a></p>
+</section>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title or profile.name }}</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <header class="site-nav">
+    <a href="/" class="brand">
+      {% if profile.logo %}
+        <img src="{{ profile.logo }}" alt="{{ profile.name }}" class="brand-logo" />
+      {% else %}
+        <span class="brand-dot"></span>{{ profile.name }}
+      {% endif %}
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Writing</a>
+      {% if profile.linkedin %}<a href="{{ profile.linkedin }}">LinkedIn</a>{% endif %}
+      {% if profile.medium %}<a href="{{ profile.medium }}">Medium</a>{% endif %}
+    </nav>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-foot">
+    {% if profile.logo_dark %}
+      <img src="{{ profile.logo_dark }}" alt="{{ profile.name }}" class="foot-logo" />
+    {% endif %}
+    <p>© 2026 {{ profile.name }} · Also known as Prince Tayorski</p>
+  </footer>
+</body>
+</html>

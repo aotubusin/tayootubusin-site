@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tayo Otubusin · Strategic Programme & Transformation Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #edf0f4;
+    --paper-2: #e0e5ec;
+    --slate: #14233b;
+    --slate-2: #1d3047;
+    --ink: #1a2433;
+    --ink-soft: #38455a;
+    --terra: #117a76;
+    --terra-deep: #0c5c59;
+    --terra-light: #46aaa4;
+    --muted: #66748a;
+    --line: rgba(26, 36, 51, 0.16);
+    --disp: 'Bricolage Grotesque', sans-serif;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --body: 'Hanken Grotesk', system-ui, sans-serif;
+    --maxw: 1240px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body); color: var(--ink); background: var(--paper); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 36px; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--terra); color: #fff; }
+
+  .utility { background: var(--slate); color: var(--paper); font-size: 11.5px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .utility .wrap { display: flex; justify-content: space-between; align-items: center; height: 38px; }
+  .utility .clock { font-variant-numeric: tabular-nums; color: var(--terra-light); font-weight: 500; }
+  .utility .tag { opacity: 0.72; }
+
+  header { position: sticky; top: 0; z-index: 100; background: rgba(237, 240, 244, 0.7); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { font-family: var(--disp); font-weight: 700; font-size: 20px; letter-spacing: -0.4px; display: flex; align-items: center; gap: 11px; }
+  .brand .dot { width: 11px; height: 11px; background: var(--terra); border-radius: 50%; }
+  nav.links { display: flex; gap: 34px; }
+  nav.links a { font-size: 14px; font-weight: 500; position: relative; padding: 4px 0; }
+  nav.links a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: var(--terra); transition: width .25s ease; }
+  nav.links a:hover::after { width: 100%; }
+  .nav-cta { font-family: var(--body); font-size: 13.5px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; background: var(--slate); color: var(--paper); padding: 13px 22px; border-radius: 2px; transition: background .25s; border: none; cursor: pointer; }
+  .nav-cta:hover { background: var(--terra); }
+  .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+  .menu-toggle span { width: 26px; height: 2px; background: var(--ink); }
+
+  /* HERO */
+  .hero { padding: 80px 0 64px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(46% 60% at 82% 8%, rgba(17, 122, 118, 0.12), transparent 62%),
+      radial-gradient(50% 64% at 6% 96%, rgba(20, 35, 59, 0.10), transparent 60%); }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 60px; align-items: center; }
+  .roles { font-family: var(--disp); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--terra); margin-bottom: 24px; display: flex; align-items: center; gap: 14px; }
+  .roles::before { content: ''; width: 46px; height: 2px; background: var(--terra); }
+  .hero h1 { font-family: var(--disp); font-weight: 700; font-size: clamp(52px, 8vw, 110px); line-height: 0.86; letter-spacing: -4px; color: var(--ink); }
+  .hero h1 .serif { font-family: var(--serif); font-weight: 400; font-style: italic; color: var(--terra); letter-spacing: -2px; }
+  .hero-tagline { font-family: var(--disp); font-weight: 500; font-size: clamp(17px, 2vw, 22px); color: var(--ink); margin-top: 18px; letter-spacing: -0.3px; }
+  .hero-lead { font-size: 17px; line-height: 1.55; color: var(--ink-soft); margin: 22px 0 28px; max-width: 60ch; }
+  .hero-lead strong { font-weight: 600; color: var(--ink); }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  /* Hero portrait: replace the inner placeholder with your photo (see HTML comment) */
+  .hero-portrait { position: relative; aspect-ratio: 4/5; background: linear-gradient(160deg, var(--slate-2), var(--slate)); display: grid; place-items: center; overflow: hidden; }
+  .hero-portrait::before { content: ''; position: absolute; width: 150%; height: 150%; left: -25%; top: -10%; background: radial-gradient(circle at 50% 40%, rgba(70, 170, 164, 0.28), transparent 60%); pointer-events: none; }
+  .hero-portrait img { width: 100%; height: 100%; object-fit: cover; }
+  .hp-ring { position: absolute; width: 64%; aspect-ratio: 1; border-radius: 50%; border: 2px solid var(--terra-light); opacity: 0.35; }
+  .hp-initials { font-family: var(--disp); font-weight: 700; font-size: clamp(70px, 9vw, 120px); color: var(--terra-light); letter-spacing: -4px; }
+  .hp-note { position: absolute; bottom: 16px; left: 16px; right: 16px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: rgba(237,240,244,0.55); border: 1px dashed rgba(237,240,244,0.32); padding: 9px; text-align: center; }
+  .btn-solid { font-family: var(--body); font-size: 14px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; background: var(--slate); color: var(--paper); padding: 15px 26px; border-radius: 2px; transition: all .25s; border: none; cursor: pointer; display: inline-block; }
+  .btn-solid:hover { background: var(--terra); transform: translateY(-2px); }
+  .btn-line { font-family: var(--body); font-size: 14px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; background: transparent; color: var(--ink); padding: 15px 26px; border-radius: 2px; border: 1.5px solid var(--ink); transition: all .25s; display: inline-block; }
+  .btn-line:hover { background: var(--ink); color: var(--paper); }
+
+  /* IMPACT STATS */
+  .impact { background: var(--slate); color: var(--paper); padding: 70px 0; }
+  .impact .ihead { font-family: var(--disp); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--terra-light); margin-bottom: 44px; display: flex; align-items: center; gap: 14px; }
+  .impact .ihead::before { content: ''; width: 46px; height: 2px; background: var(--terra-light); }
+  .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .istat { padding: 0 28px; border-left: 1px solid rgba(237,240,244,0.18); }
+  .istat:first-child { border-left: none; padding-left: 0; }
+  .istat .num { font-family: var(--disp); font-weight: 700; font-size: clamp(44px, 5.5vw, 72px); line-height: 1; letter-spacing: -2px; color: var(--paper); }
+  .istat .num .pre, .istat .num .suf { color: var(--terra-light); }
+  .istat .label { font-size: 14px; color: rgba(237,240,244,0.7); margin-top: 14px; max-width: 22ch; }
+
+  /* CLIENTS */
+  .clients { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  .clients .lbl { font-family: var(--disp); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 26px; text-align: center; }
+  .client-row { display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
+  .client-row span { font-family: var(--disp); font-weight: 700; font-size: clamp(18px, 2.4vw, 26px); color: var(--ink); letter-spacing: -0.5px; opacity: 0.55; transition: opacity .25s; }
+  .client-row span:hover { opacity: 1; color: var(--terra); }
+
+  /* MARQUEE */
+  .marquee { background: var(--terra); color: #fff; padding: 18px 0; overflow: hidden; white-space: nowrap; border-top: 1px solid var(--slate); border-bottom: 1px solid var(--slate); }
+  .marquee-track { display: inline-flex; gap: 38px; animation: scroll 26s linear infinite; font-family: var(--disp); font-weight: 700; font-size: 28px; letter-spacing: -0.5px; text-transform: uppercase; }
+  .marquee-track span { display: inline-flex; align-items: center; gap: 38px; }
+  .marquee-track span::after { content: '✶'; font-size: 20px; }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* PHILOSOPHY */
+  .philosophy { background: var(--slate); padding: 120px 0; position: relative; overflow: hidden; }
+  #node-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+  .philosophy .wrap { max-width: 1000px; position: relative; z-index: 1; }
+  .philosophy .kicker { color: var(--terra-light); }
+  .philosophy .kicker::before { background: var(--terra-light); }
+  .philosophy blockquote { font-family: var(--serif); font-style: italic; font-size: clamp(28px, 4.4vw, 56px); line-height: 1.22; letter-spacing: -1px; margin-top: 8px; color: var(--paper); }
+  .philosophy blockquote em { color: var(--terra-light); font-style: italic; }
+
+  /* SIGNATURE FRAMEWORK */
+  .framework { padding: 116px 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .fw-head { max-width: 640px; margin-bottom: 64px; }
+  .fw-title { font-family: var(--disp); font-weight: 700; font-size: clamp(34px, 4.6vw, 58px); line-height: 0.98; letter-spacing: -1.5px; color: var(--ink); }
+  .fw-title .serif { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--terra); letter-spacing: -0.5px; }
+  .fw-sub { font-size: 17.5px; color: var(--ink-soft); margin-top: 20px; max-width: 560px; }
+  .fw-flow { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+  .fw-flow::before { content: ''; position: absolute; top: 19px; left: 6%; right: 6%; height: 2px; background: var(--line); z-index: 0; }
+  .fw-step { position: relative; z-index: 1; padding: 0 22px; }
+  .fw-node { width: 40px; height: 40px; border-radius: 50%; background: var(--paper); border: 2px solid var(--terra); color: var(--terra); display: grid; place-items: center; font-family: var(--disp); font-weight: 700; font-size: 15px; margin-bottom: 26px; transition: all .3s ease; }
+  .fw-step:hover .fw-node { background: var(--terra); color: #fff; transform: scale(1.08); }
+  .fw-verb { font-family: var(--disp); font-weight: 700; font-size: clamp(26px, 3vw, 36px); letter-spacing: -1px; color: var(--ink); line-height: 1; }
+  .fw-phrase { font-size: 15px; color: var(--ink-soft); margin-top: 10px; max-width: 22ch; }
+
+  section.block { padding: 120px 0; }
+
+  /* BEYOND WORK */
+  .beyond { background: var(--paper-2); }
+  .beyond-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 56px; border: 1px solid var(--line); }
+  .by-item { padding: 44px 40px; border-left: 1px solid var(--line); }
+  .by-item:first-child { border-left: none; }
+  .by-item h3 { font-family: var(--disp); font-weight: 600; font-size: 24px; letter-spacing: -0.5px; color: var(--ink); margin-bottom: 12px; }
+  .by-item p { font-size: 15.5px; color: var(--ink-soft); margin-bottom: 22px; }
+  .by-link { font-family: var(--disp); font-weight: 600; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--terra); display: inline-flex; align-items: center; gap: 9px; }
+  .by-link span { transition: transform .25s ease; }
+  .by-item:hover .by-link span { transform: translateX(6px); }
+  .kicker { font-family: var(--disp); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--terra); display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+  .kicker::before { content: ''; width: 46px; height: 2px; background: var(--terra); }
+  h2.big { font-family: var(--disp); font-weight: 700; font-size: clamp(36px, 5vw, 64px); line-height: 0.98; letter-spacing: -1.5px; max-width: 18ch; color: var(--ink); }
+  h2.big .serif { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--terra); letter-spacing: -0.5px; }
+  .lead-p { font-size: 18px; color: var(--ink-soft); max-width: 600px; margin-top: 22px; }
+
+  /* TIMELINE */
+  .timeline { margin-top: 36px; }
+  .tl-row { display: grid; grid-template-columns: 0.5fr 1fr 1.5fr; gap: 40px; align-items: start; padding: 40px 0; border-top: 1px solid var(--line); transition: padding-left .3s ease; }
+  .tl-row:last-child { border-bottom: 1px solid var(--line); }
+  .tl-row:hover { padding-left: 16px; }
+  .tl-row .tn { font-family: var(--disp); font-weight: 700; font-size: 26px; color: var(--terra); letter-spacing: -1px; }
+  .tl-row .yrs { font-family: var(--disp); font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .tl-row h3 { font-family: var(--disp); font-weight: 600; font-size: clamp(24px, 3vw, 34px); line-height: 1.04; letter-spacing: -1px; color: var(--ink); }
+  .tl-row p { font-size: 16px; color: var(--ink-soft); padding-top: 4px; }
+  .tl-row p strong { color: var(--ink); font-weight: 600; }
+
+  /* EXPERTISE */
+  .work { background: var(--paper-2); }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 56px; border: 1px solid var(--line); }
+  .wc { padding: 44px 40px; border-left: 1px solid var(--line); border-top: 1px solid var(--line); transition: background .3s; }
+  .wc:nth-child(-n+2) { border-top: none; }
+  .wc:nth-child(odd) { border-left: none; }
+  .wc:hover { background: var(--paper); }
+  .wc .tag { font-family: var(--disp); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; display: block; }
+  .wc h3 { font-family: var(--disp); font-weight: 600; font-size: 23px; letter-spacing: -0.5px; margin-bottom: 10px; color: var(--ink); }
+  .wc p { font-size: 15px; color: var(--ink-soft); }
+  .work-note { text-align: center; font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--muted); margin-top: 40px; }
+  .wc.wide { grid-column: 1 / -1; background: var(--paper); }
+  .wc.wide .tag { color: var(--terra-light); }
+  .wc.wide .wide-inner { display: grid; grid-template-columns: 0.9fr 1.4fr; gap: 30px; align-items: center; }
+  @media (max-width: 760px) { .wc.wide .wide-inner { grid-template-columns: 1fr; gap: 12px; } }
+
+  /* FELLOWSHIP */
+  .ff { background: var(--slate); color: var(--paper); }
+  .ff-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
+  .ff .kicker { color: var(--terra-light); }
+  .ff .kicker::before { background: var(--terra-light); }
+  .ff h2 { font-family: var(--disp); font-weight: 700; font-size: clamp(34px, 4.6vw, 60px); line-height: 0.98; letter-spacing: -1.5px; margin-bottom: 22px; }
+  .ff h2 .serif { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--terra-light); }
+  .ff p { font-size: 17px; color: rgba(237,240,244,0.75); margin-bottom: 30px; max-width: 520px; }
+  .ff-visual { aspect-ratio: 1/1; border: 1.5px solid rgba(237,240,244,0.25); display: grid; place-items: center; position: relative; }
+  .ff-visual .big-t { font-family: var(--disp); font-weight: 700; font-size: 160px; color: var(--terra); letter-spacing: -6px; }
+  .ff-visual .ring { position: absolute; inset: 24px; border: 1px solid rgba(237,240,244,0.15); border-radius: 50%; }
+  .btn-terra { font-family: var(--body); font-size: 14px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; background: var(--terra); color: #fff; padding: 15px 28px; border-radius: 2px; transition: all .25s; display: inline-block; }
+  .btn-terra:hover { background: var(--terra-deep); transform: translateY(-2px); }
+
+  /* WRITING */
+  .writing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border: 1px solid var(--line); }
+  .post { border-left: 1px solid var(--line); transition: background .3s; }
+  .post:first-child { border-left: none; }
+  .post:hover { background: var(--paper-2); }
+  .post-top { aspect-ratio: 16/10; background: var(--paper-2); display: grid; place-items: center; border-bottom: 1px solid var(--line); color: var(--slate); }
+  .post:hover .post-top { background: var(--paper); }
+  .post-top svg { opacity: 0.4; }
+  .post-body { padding: 28px 28px 34px; }
+  .post-body .cat { font-family: var(--disp); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--terra); }
+  .post-body h3 { font-family: var(--disp); font-weight: 600; font-size: 20px; letter-spacing: -0.5px; line-height: 1.15; margin: 12px 0; color: var(--ink); }
+  .post-body p { font-size: 14.5px; color: var(--ink-soft); }
+
+  /* CONTACT */
+  .contact { background: var(--paper-2); text-align: center; }
+  .contact .wrap { max-width: 800px; }
+  .contact h2 { font-family: var(--disp); font-weight: 700; font-size: clamp(40px, 6.5vw, 92px); line-height: 0.92; letter-spacing: -3px; margin-bottom: 24px; color: var(--ink); }
+  .contact h2 .serif { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--terra); }
+  .contact p { font-size: 18px; color: var(--ink-soft); margin-bottom: 38px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .contact-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  footer { background: var(--slate); color: rgba(237,240,244,0.6); }
+  .foot-word { font-family: var(--disp); font-weight: 700; font-size: clamp(44px, 13vw, 180px); line-height: 0.86; letter-spacing: -5px; padding: 54px 0 44px; color: transparent; -webkit-text-stroke: 1px rgba(237,240,244,0.32); }
+  .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 36px; padding-bottom: 44px; }
+  .foot-col h4 { font-family: var(--disp); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--terra-light); margin-bottom: 16px; }
+  .foot-col a { display: block; font-size: 14.5px; padding: 5px 0; color: rgba(237,240,244,0.7); transition: color .2s; }
+  .foot-col a:hover { color: var(--paper); }
+  .foot-bottom { border-top: 1px solid rgba(237,240,244,0.15); padding: 26px 0 36px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12.5px; color: rgba(237,240,244,0.45); letter-spacing: 0.5px; }
+
+  .reveal, .reveal-l, .reveal-r { opacity: 0; transition: opacity 1.05s cubic-bezier(.22,1,.36,1), transform 1.05s cubic-bezier(.22,1,.36,1); will-change: opacity, transform; }
+  .reveal { transform: translateY(44px); }
+  .reveal-l { transform: translateX(-52px); }
+  .reveal-r { transform: translateX(52px); }
+  .reveal.in, .reveal-l.in, .reveal-r.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-l, .reveal-r { transition: none; opacity: 1; transform: none; }
+  }
+
+  @media (max-width: 900px) {
+    .fw-flow { grid-template-columns: 1fr 1fr; gap: 36px 0; }
+    .fw-flow::before { display: none; }
+    .fw-step { padding: 0 16px; }
+    nav.links, .nav-cta { display: none; }
+    .menu-toggle { display: flex; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; align-items: start; }
+    .hero-portrait { max-width: 300px; }
+    .impact-grid { grid-template-columns: 1fr 1fr; gap: 40px 0; }
+    .istat { padding: 0 22px; }
+    .istat:nth-child(3) { border-left: none; padding-left: 0; }
+    .tl-row { grid-template-columns: 1fr; gap: 8px; }
+    .work-grid, .writing-grid { grid-template-columns: 1fr; }
+    .wc { border-left: none; }
+    .wc:nth-child(2) { border-top: 1px solid var(--line); }
+    .post { border-left: none; border-top: 1px solid var(--line); }
+    .post:first-child { border-top: none; }
+    .ff-grid { grid-template-columns: 1fr; gap: 44px; }
+    section.block { padding: 80px 0; }
+    .client-row { gap: 28px; }
+  }
+  @media (max-width: 560px) { .wrap { padding: 0 22px; } .impact-grid { grid-template-columns: 1fr; } .istat { border-left: none; padding-left: 0; border-top: 1px solid rgba(237,240,244,0.18); padding-top: 26px; } .istat:first-child { border-top: none; padding-top: 0; } }
+</style>
+</head>
+<body>
+
+<div class="utility">
+  <div class="wrap">
+    <span class="tag">Tayo Otubusin · Strategic Programme &amp; Transformation Leader · Derby, UK</span>
+    <span><span class="clock" id="clock">--:--:--</span> &nbsp;UK</span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <!-- LOGO: when you have one, replace the line below with:
+           <img src="logo.svg" alt="Tayo Otubusin" style="height:30px;width:auto;"> -->
+      <span class="dot"></span>TAYO OTUBUSIN
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#impact">Profile</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#fellowship">Fellowship</a>
+    </nav>
+    <button class="nav-cta" onclick="location.href='#contact'">Get in touch →</button>
+    <button class="menu-toggle" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <div class="roles reveal">Strategic Programme Leader · Transformation · Founder</div>
+      <h1 class="reveal">Tayo <span class="serif">Otubusin</span></h1>
+      <p class="hero-tagline reveal">I turn strategy into change that actually gets adopted.</p>
+      <p class="hero-lead reveal">An operations &amp; transformation leader with <strong>12+ years</strong> delivering complex change in regulated, technically demanding environments, across organisations from SMEs to large enterprises. I help organisations turn strategic intent into measurable operational outcomes. Grounded in aerospace engineering, sharpened by an Executive MBA. Founder of the Tayorski Fellowship.</p>
+      <div class="hero-actions reveal">
+        <a href="#about" class="btn-solid">My story</a>
+        <a href="#impact" class="btn-line">At a glance</a>
+      </div>
+    </div>
+    <div class="hero-portrait reveal-r">
+      <!-- TO ADD YOUR PHOTO: delete the two divs below and uncomment the line:
+      <img src="tayo-portrait.jpg" alt="Tayo Otubusin"> -->
+      <div class="hp-ring"></div>
+      <div class="hp-initials">TO</div>
+      <div class="hp-note">Your professional portrait goes here</div>
+    </div>
+  </div>
+</section>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Turn strategy into action</span><span>Make change stick</span><span>Build for impact</span><span>Lift as you climb</span><span>Turn strategy into action</span><span>Make change stick</span><span>Build for impact</span><span>Lift as you climb</span>
+  </div>
+</div>
+
+<!-- SIGNATURE FRAMEWORK -->
+<section class="framework">
+  <div class="wrap">
+    <div class="fw-head reveal">
+      <div class="fw-title">A method, <span class="serif">not a guess.</span></div>
+      <p class="fw-sub">How I turn strategic intent into lasting change, in four repeatable steps.</p>
+    </div>
+    <div class="fw-flow">
+      <div class="fw-step reveal">
+        <div class="fw-node">01</div>
+        <div class="fw-verb">Design</div>
+        <div class="fw-phrase">the operating model around process, performance and capability.</div>
+      </div>
+      <div class="fw-step reveal">
+        <div class="fw-node">02</div>
+        <div class="fw-verb">Deliver</div>
+        <div class="fw-phrase">the programme as complex, cross-functional change, end to end.</div>
+      </div>
+      <div class="fw-step reveal">
+        <div class="fw-node">03</div>
+        <div class="fw-verb">Measure</div>
+        <div class="fw-phrase">what matters through governance, KPIs and data-led performance.</div>
+      </div>
+      <div class="fw-step reveal">
+        <div class="fw-node">04</div>
+        <div class="fw-verb">Align</div>
+        <div class="fw-phrase">the stakeholders so the change is embedded and sustained.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AT A GLANCE -->
+<section class="impact" id="impact">
+  <div class="wrap">
+    <div class="ihead reveal-l">At a glance</div>
+    <div class="impact-grid">
+      <div class="istat reveal"><div class="num"><span data-count="12">0</span><span class="suf">+</span></div><div class="label">Years across operations, transformation and capability</div></div>
+      <div class="istat reveal"><div class="num"><span data-count="6">0</span><span class="suf">+</span></div><div class="label">Industries delivered into, from aerospace and energy to medical devices</div></div>
+      <!-- On achieving chartered status, change "MEng" below to "CEng" -->
+      <div class="istat reveal"><div class="num">MEng</div><div class="label">Aerospace Engineering (Hons), University of Liverpool</div></div>
+      <div class="istat reveal"><div class="num">MBA</div><div class="label">Executive MBA, Warwick Business School</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="clients">
+  <div class="wrap reveal">
+    <div class="lbl">The sectors</div>
+    <div class="client-row">
+      <span>Aerospace</span>
+      <span>Energy &amp; Power</span>
+      <span>Advanced Manufacturing</span>
+      <span>Medical Devices</span>
+      <span>Academia &amp; Research</span>
+      <span>Public Sector</span>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <canvas id="node-canvas" aria-hidden="true"></canvas>
+  <div class="wrap reveal">
+    <div class="kicker">How I work</div>
+    <blockquote>Strategy is easy to write and hard to land. The real work is in what gets <em>built, adopted, and sustained</em>, long after the plan is filed.</blockquote>
+  </div>
+</section>
+
+<!-- ABOUT / TIMELINE -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="kicker reveal-l">My story</div>
+    <h2 class="big reveal">From engineer to <span class="serif">transformation leader.</span></h2>
+    <p class="lead-p reveal">A career that began at the engineering coalface and grew into leading complex, cross-functional change across engineering, quality and operations. The through-line: a structured, analytical approach to making complex things work, and embedding change that lasts, without disrupting the operations it depends on.</p>
+    <div class="timeline">
+      <div class="tl-row reveal">
+        <div class="tn">01</div>
+        <div><div class="yrs">Foundation · Liverpool</div><h3>An engineer's grounding</h3></div>
+        <p>MEng (Hons) in Aerospace Engineering at the University of Liverpool, the technical bedrock beneath everything that followed.</p>
+      </div>
+      <div class="tl-row reveal">
+        <div class="tn">02</div>
+        <div><div class="yrs">2014 – 2015 · Sheffield</div><h3>Precision engineering</h3></div>
+        <p>Design Engineer at IIDEA Limited, with hands-on component design, manufacture and inspection across CAD, CNC and multi-axis machining, working to <strong>ISO 9001 and UKAS</strong> quality standards. The foundation in how precision work really gets made.</p>
+      </div>
+      <div class="tl-row reveal">
+        <div class="tn">03</div>
+        <div><div class="yrs">2015 – 2018 · Advanced Manufacturing</div><h3>Engineering at the frontier</h3></div>
+        <p>As Advanced Manufacturing Engineer at Florida Turbine Technologies, <strong>led the end-to-end delivery of a £250k+ Innovate UK co-funded programme</strong> with the University of Derby, managing scope, schedule, cost and risk, and reporting to senior leadership. Followed by applied additive-manufacturing research at the Institute for Innovation in Sustainable Engineering, informing real capital-investment decisions and a <a href="https://asmedigitalcollection.asme.org/GT/proceedings-abstract/GT2018/51128/V006T24A010/271322" target="_blank" rel="noopener" style="color:var(--terra);font-weight:600;text-decoration:none;border-bottom:1px solid var(--terra)">peer-reviewed paper at ASME Turbo Expo 2018</a>.</p>
+      </div>
+      <div class="tl-row reveal">
+        <div class="tn">04</div>
+        <div><div class="yrs">2018 – Present · AddQual, Derby</div><h3>Operations &amp; Transformation Lead</h3></div>
+        <p>Progressing from technical delivery into leadership of metrology operations and broader transformation. Accountable for delivery, quality and operational efficiency, <strong>improving throughput and cycle time</strong> through workflow redesign and automation, establishing governance, KPIs and reporting cadence, aligning engineering, quality and operations teams, and building high-performing technical teams in support of major aerospace programmes.</p>
+      </div>
+      <div class="tl-row reveal">
+        <div class="tn">05</div>
+        <div><div class="yrs">Recent · Warwick &amp; beyond</div><h3>Sharpening the strategy, giving back</h3></div>
+        <p>An <strong>Executive MBA at Warwick Business School</strong> connecting business strategy, technology and operational execution. Alongside it, serving as a <strong>School Governor</strong> in Derby and founding the <strong>Tayorski Fellowship</strong> to champion the next generation of Nigerian students who think the way I learned to think.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="block work" id="expertise">
+  <div class="wrap">
+    <div class="kicker reveal-l">What I do</div>
+    <h2 class="big reveal">Where I create <span class="serif">value.</span></h2>
+    <p class="lead-p reveal">I bring a structured, analytical approach to complex problems, particularly where delivery reliability, quality and operational performance are critical, and change must land without disrupting core operations. Four capabilities sit at the centre of my work.</p>
+    <div class="work-grid">
+      <div class="wc reveal"><span class="tag">Design</span><h3>Operating Model Design</h3><p>Shaping how work is structured, delivered and measured, aligning process, performance and capability so an organisation can deliver reliably and scale.</p></div>
+      <div class="wc reveal"><span class="tag">Deliver</span><h3>Programme &amp; Transformation Delivery</h3><p>Translating strategic intent into measurable operational outcomes, leading complex, cross-functional change from definition through to delivery and sustained adoption.</p></div>
+      <div class="wc reveal"><span class="tag">Measure</span><h3>Data-led Performance &amp; Governance</h3><p>Establishing governance frameworks, KPIs and reporting cadence that improve visibility, accountability and decision-making, turning data into better performance.</p></div>
+      <div class="wc reveal"><span class="tag">Align</span><h3>Cross-functional Stakeholder Alignment</h3><p>Bringing engineering, quality and operations together to deliver coordinated outcomes, with the influence to move teams who do not report to me.</p></div>
+      <div class="wc wide reveal">
+        <div class="wide-inner">
+          <div><span class="tag">Underpinning it all</span><h3>Capability Building</h3></div>
+          <p>Developing high-performing teams through recruitment, training and coaching, and building the internal capability for change to outlast any single programme. The people are what make transformation stick.</p>
+        </div>
+      </div>
+    </div>
+    <p class="work-note">Experience rooted in aerospace and advanced manufacturing, with principles that travel to any regulated, complex sector.</p>
+  </div>
+</section>
+
+<!-- FELLOWSHIP -->
+<section class="block ff" id="fellowship">
+  <div class="wrap ff-grid">
+    <div class="reveal">
+      <div class="kicker">A cause close to me</div>
+      <h2>The Tayorski <span class="serif">Fellowship.</span></h2>
+      <p>In 2026 I founded a fellowship to celebrate Nigerian students who embody curiosity, excellence, and the drive to apply their learning to real problems. It begins as a single annual prize, built to grow into a scholarship, and one day, a living community of Fellows.</p>
+      <a href="https://tayorskifellowship.org" class="btn-terra">Visit the Fellowship →</a>
+    </div>
+    <div class="ff-visual reveal">
+      <div class="ring"></div>
+      <div class="big-t">T</div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="block" id="writing">
+  <div class="wrap">
+    <div class="kicker reveal-l">Writing &amp; thinking</div>
+    <h2 class="big reveal">Ideas worth <span class="serif">sharing.</span></h2>
+    <p class="lead-p reveal">Occasional essays on transformation, leadership, engineering, and giving back. <span style="font-style:italic">(Even one a quarter builds real authority.)</span></p>
+    <div class="writing-grid">
+      <div class="post reveal">
+        <div class="post-top"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg></div>
+        <div class="post-body"><span class="cat">Transformation</span><h3>Leading change without authority</h3><p>How to align stakeholders and drive adoption when no one reports to you. Lessons from a decade of cross-functional programmes.</p></div>
+      </div>
+      <div class="post reveal">
+        <div class="post-top"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <div class="post-body"><span class="cat">Career</span><h3>From engineer to programme leader</h3><p>Why the best transformation leaders often start at the technical coalface, and how to make the leap.</p></div>
+      </div>
+      <div class="post reveal">
+        <div class="post-top"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="post-body"><span class="cat">Giving back</span><h3>Why applied thinking beats grades</h3><p>The conviction behind the Tayorski Fellowship, and why Nigeria's future depends on students who use what they learn.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEYOND WORK -->
+<section class="block beyond" id="beyond">
+  <div class="wrap">
+    <div class="kicker reveal-l">Beyond work</div>
+    <h2 class="big reveal">Away from the <span class="serif">day job.</span></h2>
+    <p class="lead-p reveal">The same curiosity that drives my work tends to show up everywhere else too. When I am not leading change programmes, you will usually find me behind a camera or supporting young people closer to home.</p>
+    <div class="beyond-grid">
+      <div class="by-item reveal">
+        <h3>Photography</h3>
+        <p>A long-standing creative pursuit, and a separate venture of its own. A different way of paying attention to the world, and of seeing what others walk past.</p>
+        <a href="https://tayorskiphotography.com" class="by-link">View my photography <span>&rarr;</span></a>
+      </div>
+      <div class="by-item reveal">
+        <h3>Community &amp; governance</h3>
+        <p>Serving as a school governor in Derby, helping shape the education and opportunities of the next generation of young people in my own community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block contact" id="contact">
+  <div class="wrap reveal">
+    <h2>Let's build <span class="serif">something.</span></h2>
+    <p>Whether it is a transformation programme, a board or governance role, a speaking invitation, or a Fellowship partnership, I would welcome the conversation.</p>
+    <div class="contact-cta">
+      <a href="mailto:aotubusin@gmail.com" class="btn-solid">Email me</a>
+      <a href="https://www.linkedin.com/in/adetayo-otubusin/" class="btn-line">Connect on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-word">OTUBUSIN</div>
+    <div class="foot-grid">
+      <div class="foot-col"><h4>Explore</h4><a href="#about">About</a><a href="#impact">Profile</a><a href="#expertise">Expertise</a><a href="#fellowship">Fellowship</a><a href="#beyond">Beyond work</a></div>
+      <div class="foot-col"><h4>Connect</h4><a href="https://www.linkedin.com/in/adetayo-otubusin/">LinkedIn</a><a href="https://www.researchgate.net/profile/Adetayo-Otubusin">Research profile</a><a href="mailto:aotubusin@gmail.com">Email</a><a href="https://tayorskifellowship.org">The Fellowship</a></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Tayo Otubusin · MBA, MEng (Hons)</div>
+      <div>Strategic Programme &amp; Transformation Leader · Derby, UK</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function tick() {
+    const now = new Date();
+    const uk = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/London' }));
+    const h = String(uk.getHours()).padStart(2,'0');
+    const m = String(uk.getMinutes()).padStart(2,'0');
+    const s = String(uk.getSeconds()).padStart(2,'0');
+    const el = document.getElementById('clock');
+    if (el) el.textContent = `${h}:${m}:${s}`;
+  }
+  setInterval(tick, 1000); tick();
+
+  // Connected-nodes background (philosophy section)
+  (function () {
+    const canvas = document.getElementById('node-canvas');
+    if (!canvas) return;
+    const section = canvas.closest('section');
+    const ctx = canvas.getContext('2d');
+    const COLOR = '70, 170, 164';      // teal-light
+    const MAXDIST = 132;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let w = 0, h = 0, dpr = 1, particles = [], raf = null;
+    const mouse = { x: null, y: null };
+
+    function size() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const r = section.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function init() {
+      const n = Math.max(22, Math.min(56, Math.floor(w / 24)));
+      particles = [];
+      for (let i = 0; i < n; i++) {
+        particles.push({
+          x: Math.random() * w, y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.32, vy: (Math.random() - 0.5) * 0.32,
+          r: Math.random() * 1.6 + 1.1
+        });
+      }
+    }
+    function frame(loop) {
+      ctx.clearRect(0, 0, w, h);
+      for (const p of particles) {
+        if (!reduce) {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+        }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + COLOR + ', 0.6)';
+        ctx.fill();
+      }
+      for (let i = 0; i < particles.length; i++) {
+        const a = particles[i];
+        for (let j = i + 1; j < particles.length; j++) {
+          const b = particles[j];
+          const dx = a.x - b.x, dy = a.y - b.y, d = Math.hypot(dx, dy);
+          if (d < MAXDIST) {
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = 'rgba(' + COLOR + ',' + (0.16 * (1 - d / MAXDIST)) + ')';
+            ctx.lineWidth = 1; ctx.stroke();
+          }
+        }
+        if (mouse.x != null) {
+          const dx = a.x - mouse.x, dy = a.y - mouse.y, d = Math.hypot(dx, dy);
+          if (d < MAXDIST * 1.5) {
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = 'rgba(' + COLOR + ',' + (0.3 * (1 - d / (MAXDIST * 1.5))) + ')';
+            ctx.lineWidth = 1; ctx.stroke();
+          }
+        }
+      }
+      if (loop && !reduce) raf = requestAnimationFrame(() => frame(true));
+    }
+    function start() { size(); init(); cancelAnimationFrame(raf); frame(!reduce); }
+    window.addEventListener('resize', () => { size(); init(); if (reduce) frame(false); });
+    section.addEventListener('mousemove', (e) => {
+      const r = section.getBoundingClientRect();
+      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+    });
+    section.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+    // Start once the section is near view to avoid measuring 0-height
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach(en => { if (en.isIntersecting) { start(); io.disconnect(); } });
+    }, { threshold: 0.05 });
+    io.observe(section);
+  })();
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), (i % 4) * 110); obs.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => obs.observe(el));
+
+  const counted = new Set();
+  const cObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !counted.has(e.target)) {
+        counted.add(e.target);
+        const target = parseInt(e.target.dataset.count, 10);
+        let cur = 0; const step = Math.max(1, Math.ceil(target / 24));
+        const t = setInterval(() => { cur += step; if (cur >= target) { cur = target; clearInterval(t); } e.target.textContent = cur; }, 40);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => cObs.observe(el));
+
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    const links = document.querySelector('nav.links');
+    if (links.style.display === 'flex') { links.style.display = 'none'; }
+    else {
+      links.style.display = 'flex'; links.style.position = 'absolute'; links.style.top = '114px';
+      links.style.right = '22px'; links.style.flexDirection = 'column'; links.style.background = 'var(--paper)';
+      links.style.padding = '22px 28px'; links.style.gap = '16px'; links.style.border = '1px solid var(--line)';
+      links.style.boxShadow = '0 12px 30px rgba(0,0,0,0.1)'; links.style.zIndex = '200';
+    }
+  });
+</script>
+</body>
+</html>

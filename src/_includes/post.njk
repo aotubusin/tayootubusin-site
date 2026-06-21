@@ -1,0 +1,15 @@
+---
+layout: base.njk
+---
+<article class="post">
+  <p class="post-meta">{{ date | readableDate }}{% if category %} · {{ category }}{% endif %}</p>
+  <h1>{{ title }}</h1>
+  {% if cover %}<img src="{{ cover }}" alt="" class="post-cover" />{% endif %}
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+  {% if tags %}
+    <p class="tags">{% for t in tags %}<span>#{{ t }}</span> {% endfor %}</p>
+  {% endif %}
+  <p><a href="/blog/">← Back to all writing</a></p>
+</article>

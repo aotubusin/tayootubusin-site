@@ -1,0 +1,8 @@
+{
+  "stats": [
+    { "value": "12", "prefix": "", "suffix": "+", "animate": true, "label": "Years across operations, transformation and capability" },
+    { "value": "6", "prefix": "", "suffix": "+", "animate": true, "label": "Industries delivered into, from aerospace and energy to medical devices" },
+    { "value": "MEng", "prefix": "", "suffix": "", "animate": false, "label": "Aerospace Engineering (Hons), University of Liverpool" },
+    { "value": "MBA", "prefix": "", "suffix": "", "animate": false, "label": "Executive MBA, Warwick Business School" }
+  ]
+}

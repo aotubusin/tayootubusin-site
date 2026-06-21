@@ -1,0 +1,14 @@
+{
+  "name": "tayootubusin-site",
+  "version": "1.0.0",
+  "description": "Personal brand site for Tayo Otubusin, with Decap CMS and Medium integration.",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-fetch": "^5.0.0",
+    "rss-parser": "^3.13.0"
+  }
+}

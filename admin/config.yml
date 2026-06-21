@@ -1,0 +1,121 @@
+# ============================================================
+#  DECAP CMS CONFIGURATION
+#  This file defines EVERYTHING that is editable from the
+#  dashboard. Add a field here and it appears in the admin UI.
+# ============================================================
+
+backend:
+  name: github                       # content lives in your GitHub repo
+  repo: YOUR-GITHUB-USERNAME/tayootubusin-site   # <-- change this
+  branch: main
+  # Auth is wired during deployment (see README, step 5).
+
+media_folder: "uploads"              # where uploaded images are stored in the repo
+public_folder: "/uploads"            # the URL path the live site uses for them
+
+# Show a friendly editing preview and allow saving drafts
+publish_mode: editorial_workflow
+
+collections:
+  # ----------------------------------------------------------
+  # 1. BLOG POSTS  (title, date, tags, cover image, body)
+  # ----------------------------------------------------------
+  - name: "blog"
+    label: "Blog posts"
+    label_singular: "Blog post"
+    folder: "src/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}  ·  {{date | date('YYYY-MM-DD')}}"
+    sort_field: "date"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "category", label: "Category", widget: "select",
+          options: ["Transformation", "Leadership", "Engineering", "Career", "Giving back"] }
+      - { name: "tags", label: "Tags", widget: "list", required: false, hint: "Type a tag and press enter" }
+      - { name: "cover", label: "Cover image", widget: "image", required: false }
+      - { name: "excerpt", label: "Short summary", widget: "text", hint: "1-2 sentences shown on the blog list" }
+      - { name: "body", label: "Post content", widget: "markdown" }
+
+  # ----------------------------------------------------------
+  # 2. SITE SETTINGS  (singletons — one editable record each)
+  # ----------------------------------------------------------
+  - name: "settings"
+    label: "Site settings"
+    files:
+
+      # --- Profile / hero ---
+      - name: "profile"
+        label: "Profile & hero"
+        file: "src/content/settings/profile.json"
+        fields:
+          - { name: "name", label: "Name", widget: "string" }
+          - { name: "roles", label: "Roles line", widget: "string",
+              hint: "e.g. Strategic Programme Leader · Transformation · Founder" }
+          - { name: "tagline", label: "Tagline", widget: "string" }
+          - { name: "lead", label: "Hero paragraph", widget: "text" }
+          - { name: "portrait", label: "Profile photo", widget: "image", required: false }
+          - { name: "logo", label: "Logo (for light header)", widget: "image", required: false,
+              hint: "SVG or transparent PNG. Leave empty to show your name as text." }
+          - { name: "logo_dark", label: "Logo (for dark sections/footer)", widget: "image", required: false,
+              hint: "A light-coloured version that shows on the dark slate footer." }
+          - { name: "email", label: "Contact email", widget: "string" }
+          - { name: "linkedin", label: "LinkedIn URL", widget: "string" }
+          - { name: "medium", label: "Medium profile URL", widget: "string",
+              hint: "e.g. https://medium.com/@yourhandle  (used to pull your posts in)" }
+
+      # --- Story / experience timeline ---
+      - name: "timeline"
+        label: "Story & experience"
+        file: "src/content/settings/timeline.json"
+        fields:
+          - name: "chapters"
+            label: "Career chapters"
+            widget: "list"
+            label_singular: "Chapter"
+            summary: "{{fields.period}} · {{fields.title}}"
+            fields:
+              - { name: "period", label: "Period / location", widget: "string",
+                  hint: "e.g. 2018–Present · AddQual, Derby" }
+              - { name: "title", label: "Chapter title", widget: "string",
+                  hint: "e.g. Operations & Transformation Lead" }
+              - { name: "body", label: "Description", widget: "text" }
+
+      # --- At a glance stats ---
+      - name: "atglance"
+        label: "At a glance (stats)"
+        file: "src/content/settings/atglance.json"
+        fields:
+          - name: "stats"
+            label: "Stat cells"
+            widget: "list"
+            max: 4
+            fields:
+              - { name: "value", label: "Big value", widget: "string", hint: "e.g. 12, £25, MEng, 6" }
+              - { name: "prefix", label: "Prefix", widget: "string", required: false, hint: "e.g. £" }
+              - { name: "suffix", label: "Suffix", widget: "string", required: false, hint: "e.g. +, M+, k+" }
+              - { name: "animate", label: "Count up?", widget: "boolean", default: true,
+                  hint: "On for numbers, off for MEng/MBA etc." }
+              - { name: "label", label: "Description", widget: "string" }
+
+      # --- Sectors strip ---
+      - name: "sectors"
+        label: "Sectors / industries"
+        file: "src/content/settings/sectors.json"
+        fields:
+          - { name: "heading", label: "Strip label", widget: "string", default: "The sectors" }
+          - { name: "items", label: "Sectors", widget: "list", hint: "One industry per item" }
+
+      # --- Expertise pillars ---
+      - name: "expertise"
+        label: "Expertise pillars"
+        file: "src/content/settings/expertise.json"
+        fields:
+          - name: "pillars"
+            label: "Pillars"
+            widget: "list"
+            fields:
+              - { name: "tag", label: "Tag", widget: "string", hint: "e.g. Design, Deliver" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "body", label: "Description", widget: "text" }
