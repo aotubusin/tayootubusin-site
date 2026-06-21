@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ title or profile.name }}</title>
-  <link rel="stylesheet" href="/assets/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title or profile.name }} · Operations &amp; Transformation Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <header class="site-nav">
+
+<header>
+  <div class="wrap nav-inner">
     <a href="/" class="brand">
       {% if profile.logo %}
-        <img src="{{ profile.logo }}" alt="{{ profile.name }}" class="brand-logo" />
+        <img src="{{ profile.logo }}" alt="{{ profile.name }}" class="brand-logo">
       {% else %}
-        <span class="brand-dot"></span>{{ profile.name }}
+        <span class="dot"></span>{{ profile.name | upper }}
       {% endif %}
     </a>
-    <nav>
-      <a href="/">Home</a>
+    <nav class="nav-links">
+      <a href="/#about">About</a>
+      <a href="/#impact">Profile</a>
+      <a href="/#expertise">Expertise</a>
       <a href="/blog/">Writing</a>
-      {% if profile.linkedin %}<a href="{{ profile.linkedin }}">LinkedIn</a>{% endif %}
       {% if profile.medium %}<a href="{{ profile.medium }}">Medium</a>{% endif %}
+      <a href="/#contact" class="nav-cta">Get in touch</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    {{ content | safe }}
-  </main>
+{{ content | safe }}
 
-  <footer class="site-foot">
-    {% if profile.logo_dark %}
-      <img src="{{ profile.logo_dark }}" alt="{{ profile.name }}" class="foot-logo" />
-    {% endif %}
-    <p>© 2026 {{ profile.name }} · Also known as Prince Tayorski</p>
-  </footer>
+<footer class="site-footer">
+  <div class="wrap">
+    {% if profile.logo_dark %}<img src="{{ profile.logo_dark }}" alt="{{ profile.name }}" class="foot-logo">{% endif %}
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-name">{{ profile.name }}</div>
+        <p class="foot-tag">{{ profile.tagline }}</p>
+      </div>
+      <div class="foot-col"><h4>Explore</h4>
+        <a href="/#about">About</a><a href="/#impact">Profile</a><a href="/#expertise">Expertise</a><a href="/blog/">Writing</a>
+      </div>
+      <div class="foot-col"><h4>Connect</h4>
+        <a href="{{ profile.linkedin }}">LinkedIn</a>
+        <a href="https://www.researchgate.net/profile/Adetayo-Otubusin">Research profile</a>
+        {% if profile.medium %}<a href="{{ profile.medium }}">Medium</a>{% endif %}
+        <a href="mailto:{{ profile.email }}">Email</a>
+      </div>
+    </div>
+    <div class="foot-base">© 2026 {{ profile.name }} · Also known as Prince Tayorski</div>
+  </div>
+</footer>
+
 </body>
 </html>
