@@ -1,15 +1,13 @@
 ---
 layout: base.njk
 ---
-<article class="post">
-  <p class="post-meta">{{ date | readableDate }}{% if category %} · {{ category }}{% endif %}</p>
-  <h1>{{ title }}</h1>
-  {% if cover %}<img src="{{ cover }}" alt="" class="post-cover" />{% endif %}
-  <div class="post-body">
-    {{ content | safe }}
+<section class="block">
+  <div class="wrap" style="max-width:760px;">
+    <div class="blog-meta" style="margin-bottom:14px;">{{ date | readableDate }}{% if category %} · {{ category }}{% endif %}</div>
+    <h2 class="big" style="max-width:none;">{{ title }}</h2>
+    {% if cover %}<img src="{{ cover }}" alt="" style="width:100%;border-radius:4px;margin:32px 0;">{% endif %}
+    <div class="post-body">{{ content | safe }}</div>
+    {% if tags %}<div class="blog-tags" style="margin-top:30px;">{% for t in tags %}<span>#{{ t }}</span>{% endfor %}</div>{% endif %}
+    <p style="margin-top:40px;"><a href="/blog/" class="btn-line">← All writing</a></p>
   </div>
-  {% if tags %}
-    <p class="tags">{% for t in tags %}<span>#{{ t }}</span> {% endfor %}</p>
-  {% endif %}
-  <p><a href="/blog/">← Back to all writing</a></p>
-</article>
+</section>
