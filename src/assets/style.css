@@ -1,3 +1,4 @@
+  /* style.css v2 - blog hierarchy + mobile stacking */
   :root {
     --paper: #edf0f4;
     --paper-2: #e0e5ec;
@@ -240,7 +241,7 @@
   @media (max-width: 560px) { .wrap { padding: 0 22px; } .impact-grid { grid-template-columns: 1fr; } .istat { border-left: none; padding-left: 0; border-top: 1px solid rgba(237,240,244,0.18); padding-top: 26px; } .istat:first-child { border-top: none; padding-top: 0; } }
 
   /* BLOG listing + post pages */
-  .blog-intro { max-width: none; font-size: 15.5px; margin-top: 12px; }
+  p.lead-p.blog-intro { max-width: none; font-size: 15px; margin-top: 10px; line-height: 1.5; }
   .blog-list { margin-top: 64px; border-top: 1px solid var(--line); }
   .blog-item { display: block; padding: 32px 0; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding-left .25s ease; }
   .blog-item:hover { padding-left: 12px; }
