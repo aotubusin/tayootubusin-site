@@ -16,7 +16,7 @@ permalink: /blog/index.html
         <div class="blog-meta">{{ post.date | readableDate }}{% if post.data.category %} · {{ post.data.category }}{% endif %}</div>
         <h3>{{ post.data.title }}</h3>
         <p>{{ post.data.excerpt }}</p>
-        {% if post.data.tags %}<div class="blog-tags">{% for t in post.data.tags %}<span>#{{ t }}</span>{% endfor %}</div>{% endif %}
+        {% if post.data.tags %}<div class="blog-tags">{% for t in post.data.tags %}<span>#{{ t }}</span>{% if not loop.last %} {% endif %}{% endfor %}</div>{% endif %}
       </a>
       {% else %}
       <p class="lead-p">No posts yet. Add your first from the content manager.</p>
