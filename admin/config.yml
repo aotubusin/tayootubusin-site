@@ -8,7 +8,7 @@ backend:
   name: github                       # content lives in your GitHub repo
   repo: aotubusin/tayootubusin-site  # your real repo
   branch: main
-  base_url: https://tayo-cms-auth.YOUR-SUBDOMAIN.workers.dev   # <-- your Worker URL (set in Step 4)
+  base_url: tayo-cms-auth.aotubusin.workers.dev   # <-- your Worker URL (set in Step 4)
 
 media_folder: "uploads"              # where uploaded images are stored in the repo
 public_folder: "/uploads"            # the URL path the live site uses for them
