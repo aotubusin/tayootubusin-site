@@ -5,6 +5,28 @@ permalink: /index.html
 ---
 
 <!-- HERO -->
+{% if profile.portrait_cutout %}
+<!-- Cut-out variant: full-height portrait bleeding off the right edge -->
+<section class="hero hero-cut">
+  <div class="hero-frame"></div>
+  <div class="hero-cutout reveal-r">
+    <img src="{{ profile.portrait_cutout }}" alt="{{ profile.name }}">
+  </div>
+  <div class="wrap">
+    <div class="hero-text hero-text-cut">
+      <div class="roles reveal">{{ profile.roles }}</div>
+      <h1 class="reveal">{{ profile.name }}</h1>
+      <p class="hero-tagline reveal">{{ profile.tagline }}</p>
+      <p class="hero-lead reveal">{{ profile.lead }}</p>
+      <div class="hero-actions reveal">
+        <a href="#about" class="btn-solid">My story</a>
+        <a href="#impact" class="btn-line">At a glance</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% else %}
+<!-- Boxed variant (current): portrait in a panel, or TO placeholder -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
@@ -28,6 +50,7 @@ permalink: /index.html
     </div>
   </div>
 </section>
+{% endif %}
 
 <!-- MARQUEE -->
 <div class="marquee">
