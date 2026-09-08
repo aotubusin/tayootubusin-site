@@ -6,9 +6,9 @@
 
 backend:
   name: github                       # content lives in your GitHub repo
-  repo: aotubusin/tayootubusin-site   # <-- change this
+  repo: aotubusin/tayootubusin-site  # your real repo
   branch: main
-  # Auth is wired during deployment (see README, step 5).
+  base_url: https://tayo-cms-auth.YOUR-SUBDOMAIN.workers.dev   # <-- your Worker URL (set in Step 4)
 
 media_folder: "uploads"              # where uploaded images are stored in the repo
 public_folder: "/uploads"            # the URL path the live site uses for them
@@ -55,7 +55,8 @@ collections:
               hint: "e.g. Strategic Programme Leader · Transformation · Founder" }
           - { name: "tagline", label: "Tagline", widget: "string" }
           - { name: "lead", label: "Hero paragraph", widget: "text" }
-          - { name: "portrait", label: "Profile photo", widget: "image", required: false }
+          - { name: "portrait", label: "Profile photo (boxed)", widget: "image", required: false }
+          - { name: "portrait_cutout", label: "Cut-out portrait (transparent PNG)", widget: "image", required: false, hint: "A photo of you with the background removed (transparent PNG). When set, the homepage uses the full-height cut-out hero. Leave empty to keep the boxed photo." }
           - { name: "logo", label: "Logo (for light header)", widget: "image", required: false,
               hint: "SVG or transparent PNG. Leave empty to show your name as text." }
           - { name: "logo_dark", label: "Logo (for dark sections/footer)", widget: "image", required: false,
