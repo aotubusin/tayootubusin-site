@@ -256,3 +256,19 @@
   .post-body a { color: var(--terra); border-bottom: 1px solid var(--terra); text-decoration: none; }
   .post-body ul, .post-body ol { margin: 0 0 20px 24px; }
   .post-body strong { color: var(--ink); }
+
+  /* ===== HERO — cut-out portrait variant (activates when portrait_cutout is set) ===== */
+  .hero-cut { min-height: 86vh; display: flex; align-items: center; padding: 0; }
+  .hero-cut .wrap { position: relative; z-index: 2; width: 100%; }
+  .hero-frame { position: absolute; right: 8%; top: 50%; transform: translateY(-50%); width: 30vw; max-width: 440px; aspect-ratio: 1; border: 1.5px solid var(--line); z-index: 0; }
+  .hero-text-cut { max-width: 600px; }
+  .hero-cutout { position: absolute; right: 0; bottom: 0; height: 96%; width: 46%; z-index: 1; display: flex; align-items: flex-end; justify-content: center; pointer-events: none; }
+  .hero-cutout::before { content: ''; position: absolute; right: 6%; bottom: 0; width: 80%; height: 80%; background: radial-gradient(60% 60% at 50% 60%, rgba(70,170,164,0.22), transparent 70%); z-index: 0; }
+  .hero-cutout img { position: relative; z-index: 1; height: 100%; width: auto; max-width: 100%; object-fit: contain; object-position: bottom; }
+  @media (max-width: 860px) {
+    .hero-cut { min-height: auto; padding: 40px 0 0; flex-direction: column-reverse; }
+    .hero-cutout { position: relative; height: 380px; width: 100%; margin-top: 24px; }
+    .hero-cutout img { height: 100%; }
+    .hero-frame { display: none; }
+    .hero-text-cut { max-width: none; }
+  }
